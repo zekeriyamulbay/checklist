@@ -8,7 +8,12 @@
 	counter = document.querySelector(".progress__count"),
 	reset = document.querySelector(".progress__reset");
 function loadIds() {
-	for (let a = 0; a < checkboxesLength; a += 1) {
+	if (document.querySelectorAll('input[type="checkbox"]')[0].id === "toggle") {
+    		let a = 1;
+	} else {
+		let a = 0;
+	}
+	for (a = 0; a < checkboxesLength; a += 1) {
 		const b = (a) => a.replace(/[ ,.!?;:'-]/g, "");
 		(checkboxes[a].id = `${b(
 			checkboxes[a].nextSibling.nextSibling.innerText
@@ -87,5 +92,3 @@ function load() {
 		"serviceWorker" in navigator &&
 			navigator.serviceWorker.register("/sw.js", { scope: "/" });
 }
-
-setTimeout(load, 3000);
