@@ -537,3 +537,9 @@ footer span {
 		page-break-after: avoid;
 	}
 }
+.post-content {
+    max-width: 100%;
+}
+.post-header {
+    display: none;
+}
