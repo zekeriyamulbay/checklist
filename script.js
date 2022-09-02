@@ -13,7 +13,7 @@ function loadIds() {
 	} else {
 		let a = 0;
 	}
-	for (a = 0; a < checkboxesLength; a += 1) {
+	for (a; a < checkboxesLength; a += 1) {
 		const b = (a) => a.replace(/[ ,.!?;:'-]/g, "");
 		(checkboxes[a].id = `${b(
 			checkboxes[a].nextSibling.nextSibling.innerText
