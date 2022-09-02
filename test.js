@@ -70,7 +70,7 @@ function resetCheckboxes() {
 		Object.keys(checkboxValues).forEach((a) => delete checkboxValues[a]),
 		countChecked();
 }
-window.onload = function () {
+function load() {
 	loadIds(),
 		loadValues(),
 		checkboxes.forEach((a) => a.addEventListener("click", countChecked)),
@@ -86,4 +86,6 @@ window.onload = function () {
 		),
 		"serviceWorker" in navigator &&
 			navigator.serviceWorker.register("/sw.js", { scope: "/" });
-};
+}
+
+setTimeout(load, 3000);
